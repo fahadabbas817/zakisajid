@@ -9,6 +9,9 @@ collections:
   - name: "featured"
     label: "Featured Projects"
     folder: "content/featured"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
     create: true
     fields:
       - {label: "Date", name: "date", widget: "datetime"}
@@ -24,6 +27,9 @@ collections:
   - name: "projects"
     label: "Projects"
     folder: "content/projects"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
     create: true
     fields:
       - {label: "Date", name: "date", widget: "datetime"}
@@ -37,6 +43,9 @@ collections:
   - name: "jobs"
     label: "Jobs"
     folder: "content/jobs"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
     create: true
     fields:
       - {label: "Date", name: "date", widget: "datetime"}
