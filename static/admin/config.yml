@@ -1,0 +1,75 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+media_folder: "static/admin/uploads"
+public_folder: "/admin/uploads"
+
+collections:
+  - name: "featured"
+    label: "Featured Projects"
+    folder: "content/featured"
+    create: true
+    fields:
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Drawing Image", name: "cover", widget: "image"}
+      - {label: "Simulation Image", name: "cover2", widget: "image"}
+      - {label: "GitHub Link", name: "github", widget: "string", required: false}
+      - {label: "External Link", name: "external", widget: "string", required: false}
+      - {label: "Tech Stack", name: "tech", widget: "list"}
+      - {label: "Show In Projects", name: "showInProjects", widget: "boolean", default: true}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    fields:
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "GitHub Link", name: "github", widget: "string", required: false}
+      - {label: "External Link", name: "external", widget: "string", required: false}
+      - {label: "Tech Stack", name: "tech", widget: "list"}
+      - {label: "Show In Projects", name: "showInProjects", widget: "boolean", default: true}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "jobs"
+    label: "Jobs"
+    folder: "content/jobs"
+    create: true
+    fields:
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Company", name: "company", widget: "string"}
+      - {label: "Location", name: "location", widget: "string", required: false}
+      - {label: "Range", name: "range", widget: "string"}
+      - {label: "Website", name: "url", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "settings"
+    label: "Site Content & Settings"
+    editor:
+      preview: false
+    files:
+      - label: "Hero Content"
+        name: "hero"
+        file: "content/settings/hero.md"
+        fields:
+          - {label: "Heading", name: "heading", widget: "string"}
+          - {label: "Subheading", name: "subheading", widget: "string"}
+          - {label: "Skills", name: "skills", widget: "list"}
+          - {label: "Description", name: "body", widget: "markdown"}
+      - label: "About Content"
+        name: "about"
+        file: "content/settings/about.md"
+        fields:
+          - {label: "Skills", name: "skills", widget: "list"}
+          - {label: "Description", name: "body", widget: "markdown"}
+      - label: "Social Links"
+        name: "socials"
+        file: "content/settings/socials.md"
+        fields:
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Phone", name: "phone", widget: "string"}
+          - {label: "Social Media", name: "socialMedia", widget: "list", fields: [{label: "Name", name: "name", widget: "string"}, {label: "URL", name: "url", widget: "string"}]}
