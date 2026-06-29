@@ -9,7 +9,7 @@
   "license": "MIT",
   "browserslist": "> 0.25%, not dead",
 "engines": {
-    "node": ">=20.0.0"
+    "node": ">=18"
   },
   "scripts": {
     "build": "gatsby build",
